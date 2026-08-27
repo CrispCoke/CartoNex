@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sih-grp1/schema/parcel.schema.json",
+  "title": "Group 1 Digital Parcel",
+  "description": "Schema for a georeferenced land parcel produced by Group 1.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "schema_version",
+    "parcel_id",
+    "geometry",
+    "crs",
+    "accuracy",
+    "provenance"
+  ],
+
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Version of the Group 1 parcel schema.",
+      "examples": ["1.0.0"]
+    },
+
+    "parcel_id": {
+      "type": "string",
+      "description": "Stable identifier for the Group 1 parcel record."
+    },
+
+    "plot_number": {
+      "type": ["string", "null"],
+      "description": "Plot or survey number read from the source record."
+    },
+
+    "geometry": {
+      "$ref": "#/$defs/polygon"
+    },
+
+    "crs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authority", "code"],
+      "properties": {
+        "authority": {
+          "type": "string",
+          "description": "CRS authority name, such as EPSG."
+        },
+        "code": {
+          "type": "integer",
+          "description": "CRS code."
+        },
+        "name": {
+          "type": ["string", "null"]
+        },
+        "units": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+
+    "coordinate_epoch_milliyear": {
+      "type": ["integer", "null"],
+      "description": "Coordinate reference epoch expressed in milliyears when applicable."
+    },
+
+    "building_footprints": {
+      "type": "array",
+      "description": "2D building footprints associated with this parcel.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "building_id",
+          "geometry",
+          "confidence"
+        ],
+        "properties": {
+          "building_id": {
+            "type": "string"
+          },
+          "geometry": {
+            "$ref": "#/$defs/polygon"
+          },
+          "estimated_height_m": {
+            "type": ["number", "null"],
+            "minimum": 0
+          },
+          "confidence": {
+            "$ref": "#/$defs/confidence"
+          },
+          "source": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+
+    "accuracy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "boundary_confidence",
+        "georeferencing_confidence"
+      ],
+      "properties": {
+        "boundary_confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "ocr_confidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/confidence"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "georeferencing_confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "building_detection_confidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/confidence"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "estimated_positional_error_m": {
+          "type": ["number", "null"],
+          "minimum": 0
+        }
+      }
+    },
+
+    "georeferencing": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": [
+            "survey_control",
+            "image_registration",
+            "rubber_sheeting",
+            "manual_alignment",
+            "unknown"
+          ]
+        },
+        "control_points_used": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "transformation": {
+          "type": ["object", "null"]
+        }
+      }
+    },
+
+    "temporal": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "valid_from_unix_s": {
+          "type": ["integer", "null"]
+        },
+        "valid_to_unix_s": {
+          "type": ["integer", "null"]
+        }
+      }
+    },
+
+    "accuracy_tolerance_m": {
+      "type": ["number", "null"],
+      "minimum": 0
+    },
+
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "processing_timestamp"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "scanned_map",
+            "survey_record",
+            "drone_image",
+            "satellite_image",
+            "municipal_record",
+            "combined",
+            "unknown"
+          ]
+        },
+        "source_document": {
+          "type": ["string", "null"]
+        },
+        "source_map_id": {
+          "type": ["string", "null"]
+        },
+        "processing_timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "pipeline_version": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Confidence score from 0 to 1."
+    },
+
+    "polygon": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "const": "Polygon"
+        },
+        "coordinates": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "array",
+            "minItems": 4,
+            "items": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 3,
+              "items": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
