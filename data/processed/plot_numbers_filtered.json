@@ -1,0 +1,362 @@
+[
+  {
+    "plot_number": "107",
+    "confidence": 95.0,
+    "location": {
+      "x": 834,
+      "y": 131,
+      "width": 30,
+      "height": 16
+    }
+  },
+  {
+    "plot_number": "103",
+    "confidence": 95.0,
+    "location": {
+      "x": 379,
+      "y": 153,
+      "width": 29,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "104",
+    "confidence": 95.0,
+    "location": {
+      "x": 487,
+      "y": 153,
+      "width": 30,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "102",
+    "confidence": 96.0,
+    "location": {
+      "x": 294,
+      "y": 172,
+      "width": 30,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "105",
+    "confidence": 88.0,
+    "location": {
+      "x": 607,
+      "y": 155,
+      "width": 30,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "106",
+    "confidence": 96.0,
+    "location": {
+      "x": 725,
+      "y": 162,
+      "width": 29,
+      "height": 14
+    }
+  },
+  {
+    "plot_number": "101",
+    "confidence": 73.0,
+    "location": {
+      "x": 201,
+      "y": 179,
+      "width": 27,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "107",
+    "confidence": 95.0,
+    "location": {
+      "x": 838,
+      "y": 224,
+      "width": 29,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "108",
+    "confidence": 80.0,
+    "location": {
+      "x": 925,
+      "y": 224,
+      "width": 29,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "115",
+    "confidence": 82.0,
+    "location": {
+      "x": 579,
+      "y": 318,
+      "width": 28,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "121",
+    "confidence": 96.0,
+    "location": {
+      "x": 346,
+      "y": 333,
+      "width": 28,
+      "height": 14
+    }
+  },
+  {
+    "plot_number": "119",
+    "confidence": 95.0,
+    "location": {
+      "x": 968,
+      "y": 370,
+      "width": 27,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "121",
+    "confidence": 96.0,
+    "location": {
+      "x": 244,
+      "y": 458,
+      "width": 27,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "125",
+    "confidence": 80.0,
+    "location": {
+      "x": 135,
+      "y": 483,
+      "width": 29,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "127",
+    "confidence": 96.0,
+    "location": {
+      "x": 371,
+      "y": 488,
+      "width": 30,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "128",
+    "confidence": 95.0,
+    "location": {
+      "x": 494,
+      "y": 503,
+      "width": 29,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "119",
+    "confidence": 90.0,
+    "location": {
+      "x": 944,
+      "y": 526,
+      "width": 27,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "134",
+    "confidence": 95.0,
+    "location": {
+      "x": 721,
+      "y": 565,
+      "width": 29,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "130",
+    "confidence": 93.0,
+    "location": {
+      "x": 535,
+      "y": 629,
+      "width": 30,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "131",
+    "confidence": 94.0,
+    "location": {
+      "x": 617,
+      "y": 629,
+      "width": 27,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "135",
+    "confidence": 90.0,
+    "location": {
+      "x": 818,
+      "y": 616,
+      "width": 29,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "128",
+    "confidence": 96.0,
+    "location": {
+      "x": 446,
+      "y": 633,
+      "width": 30,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "125",
+    "confidence": 96.0,
+    "location": {
+      "x": 129,
+      "y": 657,
+      "width": 30,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "127",
+    "confidence": 96.0,
+    "location": {
+      "x": 343,
+      "y": 652,
+      "width": 29,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "137",
+    "confidence": 95.0,
+    "location": {
+      "x": 912,
+      "y": 652,
+      "width": 30,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "126",
+    "confidence": 96.0,
+    "location": {
+      "x": 234,
+      "y": 676,
+      "width": 29,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "134",
+    "confidence": 96.0,
+    "location": {
+      "x": 714,
+      "y": 720,
+      "width": 29,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "145",
+    "confidence": 93.0,
+    "location": {
+      "x": 798,
+      "y": 769,
+      "width": 29,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "143",
+    "confidence": 96.0,
+    "location": {
+      "x": 526,
+      "y": 800,
+      "width": 30,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "139",
+    "confidence": 91.0,
+    "location": {
+      "x": 212,
+      "y": 809,
+      "width": 30,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "140",
+    "confidence": 95.0,
+    "location": {
+      "x": 332,
+      "y": 804,
+      "width": 30,
+      "height": 16
+    }
+  },
+  {
+    "plot_number": "142",
+    "confidence": 95.0,
+    "location": {
+      "x": 429,
+      "y": 808,
+      "width": 29,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "145",
+    "confidence": 95.0,
+    "location": {
+      "x": 884,
+      "y": 802,
+      "width": 30,
+      "height": 15
+    }
+  },
+  {
+    "plot_number": "120",
+    "confidence": 94.0,
+    "location": {
+      "x": 206,
+      "y": 975,
+      "width": 23,
+      "height": 13
+    }
+  },
+  {
+    "plot_number": "160",
+    "confidence": 93.0,
+    "location": {
+      "x": 256,
+      "y": 975,
+      "width": 23,
+      "height": 13
+    }
+  },
+  {
+    "plot_number": "200",
+    "confidence": 77.0,
+    "location": {
+      "x": 304,
+      "y": 975,
+      "width": 26,
+      "height": 12
+    }
+  }
+]

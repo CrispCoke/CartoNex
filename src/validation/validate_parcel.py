@@ -6,41 +6,50 @@ def validate_parcels(input_path: str, output_path: str) -> None:
     input_file = Path(input_path)
     output_file = Path(output_path)
 
-    if not input_file.exists():
-        raise FileNotFoundError(f"Parcel file not found: {input_file}")
-
     with open(input_file, "r", encoding="utf-8") as file:
         parcels = json.load(file)
 
-    valid_parcels = []
-
     for parcel in parcels:
-        coordinates = parcel["geometry"]["coordinates"][0]
+        area = parcel.get("area_pixels", 0)
+        plot_number = parcel.get("plot_number")
 
-        # A polygon needs at least 4 points,
-        # including the repeated starting point.
-        if len(coordinates) < 4:
-            continue
+        if area <= 0:
+            parcel["validation_status"] = "INVALID"
 
-        # Check that the polygon is closed.
-        if coordinates[0] != coordinates[-1]:
-            coordinates.append(coordinates[0])
+        elif plot_number is None:
+            parcel["validation_status"] = "WARNING"
 
-        parcel["geometry"]["coordinates"] = [coordinates]
-        valid_parcels.append(parcel)
+        else:
+            parcel["validation_status"] = "VALID"
 
     output_file.parent.mkdir(parents=True, exist_ok=True)
 
     with open(output_file, "w", encoding="utf-8") as file:
-        json.dump(valid_parcels, file, indent=2)
+        json.dump(parcels, file, indent=2)
 
-    print(f"Valid parcels: {len(valid_parcels)}")
-    print(f"Removed invalid parcels: {len(parcels) - len(valid_parcels)}")
+    valid = sum(
+        1 for p in parcels
+        if p["validation_status"] == "VALID"
+    )
+
+    warning = sum(
+        1 for p in parcels
+        if p["validation_status"] == "WARNING"
+    )
+
+    invalid = sum(
+        1 for p in parcels
+        if p["validation_status"] == "INVALID"
+    )
+
+    print(f"VALID parcels: {valid}")
+    print(f"WARNING parcels: {warning}")
+    print(f"INVALID parcels: {invalid}")
     print(f"Saved to: {output_file}")
 
 
 if __name__ == "__main__":
     validate_parcels(
-        "data/processed/test_parcels_georeferenced.json",
+        "data/processed/parcels_with_plot_numbers.json",
         "data/processed/test_parcels_validated.json"
     )

@@ -63,6 +63,6 @@ def generate_parcels(input_path: str, output_path: str) -> None:
 
 if __name__ == "__main__":
     generate_parcels(
-        "data/processed/test_map_boundaries.png",
+        "data/processed/test_map_boundaries_filtered.png",
         "data/processed/test_parcels.json"
     )
