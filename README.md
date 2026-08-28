@@ -1,29 +1,38 @@
 # CartoNex
 
-CartoNex is the Group 1 engine of the 3D/4D cadastral platform. It converts legacy scanned land-survey maps into structured digital parcel data using image processing, boundary detection, OCR, parcel matching, validation, georeferencing, and GeoJSON export.
+CartoNex is Group 1's parcel digitization and mapping pipeline for converting legacy land survey maps into structured digital parcel data.
 
-> **Prototype status:** The current pipeline is functional on the provided test map. OCR accuracy, parcel matching, and survey-grade georeferencing require further refinement for production deployment.
+## What it does
+
+- Processes scanned land maps and map boundaries
+- Detects and generates parcel polygons
+- Extracts plot numbers using Tesseract OCR
+- Filters and matches plot numbers with detected parcels
+- Validates parcel geometries
+- Georeferences parcel coordinates
+- Exports the final parcel data as GeoJSON
 
 ## Pipeline
 
 ```text
-Scanned Land Map
-       ↓
-Image Preprocessing
-       ↓
-Boundary Detection & Filtering
-       ↓
-Parcel Polygon Generation
-       ↓
-Plot Number OCR
-       ↓
+Input Map
+   ↓
+Boundary Detection
+   ↓
+Parcel Generation
+   ↓
+OCR Plot Number Extraction
+   ↓
+OCR Filtering
+   ↓
 Plot ↔ Parcel Matching
-       ↓
+   ↓
 Parcel Validation
-       ↓
+   ↓
 Georeferencing
-       ↓
+   ↓
 GeoJSON Export
+
 ```
 
 ## Key Features
@@ -50,7 +59,6 @@ GeoJSON Export
 Unmatched parcels are retained as `WARNING` rather than discarded, allowing them to be reviewed or processed further.
 
 ## Project Structure
-
 ```text
 CartoNex/
 ├── data/
