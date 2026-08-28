@@ -59,7 +59,6 @@ GeoJSON Export
 Unmatched parcels are retained as `WARNING` rather than discarded, allowing them to be reviewed or processed further.
 
 ## Project Structure
-
 ```text
 CartoNex/
 ├── data/
